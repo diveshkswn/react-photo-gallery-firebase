@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.App{
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  background: url(images/rhum-phan-1-1gFMY0sJQ-unsplash.jpg);
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title_content{
+  width: 95%;
+  display: flex;
+  
+}
+.title_heading{
+  text-shadow: 10px 10px 50px  whitesmoke;
+font-size: 3em !important;
+color: beige;
+
+}
+
+@keyframes glassAnimation {
+from  {backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.11);
+  }
+  
+  to  {backdrop-filter: blur(35px);
+    background-color: rgba(255,255,255,0.2);}
+}
+
+.app_content_glass{
+  color: aliceblue;
+  padding: 30px;
+  margin: 3%;
+  width: 90%;
+  min-height: 80vh;
+  background-color: rgba(255, 255, 255, 0.11);
+  /* background-color: rgba(255,255,255,0.2); */
+  border-radius: 3em;
+  backdrop-filter: blur(3px);
+  
+  /* backdrop-filter: blur(35px); */
+  border: 2px solid transparent;
+  
+  animation: glassAnimation 3s 3s forwards ease-in;
+  
+}
+
+
+
+@media(max-width : 800px){
+  .app_content_glass{
+    margin : 3%;
+    width: 90%;
+    padding: 10px;
+    height: 85vh;
+  }
+}
