@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { projectStorage } from '../firebase';
 
-// custom hook for firebase storage which will take filename and return file url progress and error.
+// custom hook for firebase storage which will take filename and return file url progress and error
 
 function useStorage(file) {
   const [progress, setProgress] = useState(0);
