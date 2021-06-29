@@ -13,7 +13,7 @@ function App() {
         </div>
 
         <div className="app_content_glass">
-          <h2>Hello Glassmorphism</h2>
+
           <UploadForm />
 
         </div>

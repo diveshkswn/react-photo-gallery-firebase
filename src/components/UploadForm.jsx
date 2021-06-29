@@ -34,12 +34,12 @@ function UploadForm() {
 
   return (
     <div className="uploadForm_main">
-      <FormControl maxWidth="50%">
-        <FormLabel fontSize="xl">Upload Image</FormLabel>
+      <FormControl className="uploadForm_Form" maxWidth="50%">
+        <FormLabel fontSize="3xl">Upload Image</FormLabel>
         <Input type="file" onChange={changeHandler} />
         <FormHelperText color="whiteAlpha">We never share your Images.</FormHelperText>
+        {file && <ProgressBar file={file} setFile={setFile} />}
       </FormControl>
-      {file && <ProgressBar file={file} setFile={setFile} />}
 
     </div>
 

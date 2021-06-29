@@ -1,0 +1,10 @@
+.uploadForm_main{
+display: flex;
+
+justify-content: center;
+
+}
+
+.uploadForm_Form{
+    flex: 1;
+}
