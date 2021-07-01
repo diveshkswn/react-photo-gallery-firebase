@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import UploadForm from './components/UploadForm';
+import ImageDashboard from './components/pages/ImageDashboard';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
 
         <div className="app_content_glass">
 
-          <UploadForm />
+          <ImageDashboard />
 
         </div>
       </div>

@@ -37,9 +37,13 @@ function UploadForm() {
       <FormControl className="uploadForm_Form" maxWidth="50%">
         <FormLabel fontSize="3xl">Upload Image</FormLabel>
         <Input type="file" onChange={changeHandler} />
-        <FormHelperText color="whiteAlpha">We never share your Images.</FormHelperText>
+        <FormHelperText color="whiteAlpha">We will never share your Images with anyone.</FormHelperText>
         {file && <ProgressBar file={file} setFile={setFile} />}
       </FormControl>
+
+      <div className="uploadForm_userDetails">
+        <h2>User</h2>
+      </div>
 
     </div>
 
