@@ -9,3 +9,10 @@ justify-content: space-around;
     flex: 1;
    text-align: center;
 }
+
+
+@media(max-width : 800px){
+    .uploadForm_userDetails{
+        display: none;
+    }
+}

@@ -1,1 +1,44 @@
+.imageDashboard_imageGrid{
+    margin-top: 50px;
+}
 
+
+
+/* Image styling  */
+
+
+.imageDashboard_imageGrid{
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+
+.img_wrap{
+    height: 0;
+    border-radius: 10px;
+    /* padding controls height, will always be perfectly square */
+   padding: 50% 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.img_wrap img{
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 150%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+@media (max-width : 800px) {
+    .imageDashboard_imageGrid{
+    
+      grid-template-columns: 1fr 1fr 1fr;
+    gap : 10px
+    }
+}

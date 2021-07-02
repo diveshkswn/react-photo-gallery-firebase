@@ -8,6 +8,7 @@ import {
   FormHelperText,
 } from '@chakra-ui/react';
 import ProgressBar from './ProgressBar';
+import User from './User';
 
 function UploadForm() {
   const toast = useToast();
@@ -42,7 +43,7 @@ function UploadForm() {
       </FormControl>
 
       <div className="uploadForm_userDetails">
-        <h2>User</h2>
+        <User />
       </div>
 
     </div>
