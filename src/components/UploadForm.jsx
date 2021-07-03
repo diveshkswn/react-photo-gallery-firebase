@@ -6,6 +6,7 @@ import {
   FormControl,
   FormLabel,
   FormHelperText,
+  Text,
 } from '@chakra-ui/react';
 import ProgressBar from './ProgressBar';
 import User from './User';
@@ -42,9 +43,17 @@ function UploadForm() {
         {file && <ProgressBar file={file} setFile={setFile} />}
       </FormControl>
 
-      <div className="uploadForm_userDetails">
+      {/* <div className="uploadForm_userDetails">
         <User />
-      </div>
+      </div> */}
+
+      <Text color="White" fontSize="3xl">
+        Build by
+        <a href="https://diveshkswn.github.io/portfolio_/">
+          <Text color="blue.700" fontWeight="extrabold" display="inline"> Divesh</Text>
+          {' '}
+        </a>
+      </Text>
 
     </div>
 
