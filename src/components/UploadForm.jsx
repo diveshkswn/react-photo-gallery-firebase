@@ -46,14 +46,15 @@ function UploadForm() {
       {/* <div className="uploadForm_userDetails">
         <User />
       </div> */}
-
-      <Text color="White" fontSize="3xl">
-        Build by
-        <a href="https://diveshkswn.github.io/portfolio_/">
-          <Text color="blue.700" fontWeight="extrabold" display="inline"> Divesh</Text>
-          {' '}
-        </a>
-      </Text>
+      <div className="uploadForm_userDetails">
+        <Text color="White" fontSize="3xl" display="block">
+          Build by
+          <a href="https://diveshkswn.github.io/portfolio_/">
+            <Text color="blue.700" fontWeight="extrabold" display="inline"> Divesh</Text>
+            {' '}
+          </a>
+        </Text>
+      </div>
 
     </div>
 
