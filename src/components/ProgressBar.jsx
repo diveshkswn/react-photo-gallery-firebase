@@ -2,15 +2,14 @@
 /* eslint-disable no-plusplus */
 import React, { useEffect } from 'react';
 import { Progress, useToast } from '@chakra-ui/react';
-import useStorage from '../customHooks/useStorage';
+import useStorage from '../customHooks/useStorageAuth';
 
-// 47:46
 function ProgressBar(props) {
   const toast = useToast();
 
-  const { file, setFile } = props;
-  const { url, progress, error } = useStorage(file);
-  console.log(url);
+  const { file, setFile, currentUser } = props;
+
+  const { url, progress, error } = useStorage(file, currentUser && currentUser.uid);
 
   // useEffect for file upload success/failure toast
 

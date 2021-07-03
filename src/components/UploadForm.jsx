@@ -8,12 +8,14 @@ import {
   FormHelperText,
 } from '@chakra-ui/react';
 import ProgressBar from './ProgressBar';
+import { useAuth } from './Context/Authcontext';
 import User from './User';
 
 function UploadForm() {
   const toast = useToast();
   const [file, setFile] = useState();
-  const [error, setError] = useState(false);
+  const { currentUser } = useAuth();
+
   const imgTypes = ['image/jpeg', 'image/png'];
 
   function changeHandler(e) {
@@ -22,7 +24,6 @@ function UploadForm() {
     if (selectedFile && imgTypes.includes(selectedFile.type)) {
       setFile(selectedFile);
     } else {
-      setError(true);
       toast({
         title: 'Invalid File',
         description: 'Please select a valid file format. (Supported formats are jpeg, png )',
@@ -39,7 +40,7 @@ function UploadForm() {
         <FormLabel fontSize="3xl">Upload Image</FormLabel>
         <Input type="file" onChange={changeHandler} />
         <FormHelperText color="whiteAlpha">We will never share your Images with anyone.</FormHelperText>
-        {file && <ProgressBar file={file} setFile={setFile} />}
+        {file && <ProgressBar file={file} setFile={setFile} currentUser={currentUser} />}
       </FormControl>
 
       <div className="uploadForm_userDetails">

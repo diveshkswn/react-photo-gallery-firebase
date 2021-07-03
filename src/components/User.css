@@ -1,0 +1,34 @@
+.user_main{
+    padding: 5px;
+    min-width: 300px;
+    min-height: 100px;
+    background-color: rgba(128, 194, 252, 0.178);
+    border-radius: 20px;
+    color: rgb(42, 50, 85);
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media(max-width : 800px){
+    .user_main{
+        min-width: 100px;
+        min-height: 20vh;
+        justify-content: space-around;
+    flex-direction: column;
+    }
+    .user_details{
+        display: none;
+    }
+
+    
+}

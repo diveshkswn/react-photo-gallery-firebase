@@ -4,12 +4,14 @@ import React, { useState } from 'react';
 import './ImageDashboard.css';
 import { motion } from 'framer-motion';
 import UploadForm from '../UploadForm';
-import useFirestore from '../../customHooks/useFirestore';
+import useFirestore from '../../customHooks/useFirestoreAuth';
 import Modal from '../Modal';
+import { useAuth } from '../Context/Authcontext';
 
 function ImageDashboard() {
+  const { currentUser } = useAuth();
   const [selectedImg, setSelectedImg] = useState();
-  const { docs } = useFirestore('images');
+  const { docs } = useFirestore('images', currentUser && currentUser.uid);
 
   function populateImages(img) {
     return (

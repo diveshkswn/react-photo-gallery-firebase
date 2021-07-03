@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { projectStorage } from '../firebase';
+import { projectStorage, projectFirestore, timestamp } from '../firebase';
 
 // custom hook for firebase storage which will take filename and return file url progress and error
 
-function useStorage(file) {
+function useStorage(file, uid) {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState();
   const [url, setUrl] = useState();
@@ -11,10 +11,13 @@ function useStorage(file) {
   // It will run everytime when there is change in file.
   useEffect(() => {
     // references
-    const parentRef = projectStorage.ref('currentUser.uid');
+    // const parentRef = projectStorage.ref('currentUser.uid');
 
-    const storageRef = parentRef.child(file.name);
-    // const storageRef = projectStorage.ref(file.name);
+    // const storageRef = parentRef.child(file.name);
+
+    // firestore references
+    const collectionRef = projectFirestore.collection('images');
+    const storageRef = projectStorage.ref(file.name);
     // snapshot of file at every state change
     storageRef.put(file).on('state_changed', (snapshot) => {
       const percentageOfUpload = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -29,6 +32,8 @@ function useStorage(file) {
     async () => {
       const fileUrl = await storageRef.getDownloadURL();
       setUrl(fileUrl);
+      const documentTimestamp = timestamp();
+      collectionRef.add({ imgUrl: fileUrl, createdAt: documentTimestamp, UID: uid });
     });
   }, [file]);
 
