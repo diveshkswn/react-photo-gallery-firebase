@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import {
   BrowserRouter as Router,
@@ -14,6 +14,7 @@ import AuthProvider from './components/Context/Authcontext';
 import PrivateRoute from './PrivateRoute';
 
 function App() {
+  useEffect(() => { console.log(process.env.REACT_APP_FIREBASE_APIKEY); }, []);
   return (
 
     <AuthProvider>
